@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>La Bien Parida de Ruzafa — Bocadillos XXL en el corazón de Valencia</title>
+<meta name="description" content="Taberna en Ruzafa, Valencia. Bocadillos XXL, tablas de embutidos y patatas bien paridas. Productos del Mercat de Russafa. C/ Sueca 52, Valencia." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --negro: #110b07;
+    --negro-suave: #1a120c;
+    --carbon: #241812;
+    --crema: #f4e8cf;
+    --crema-suave: #ede0c0;
+    --tostado: #c89358;
+    --mostaza: #e1a64a;
+    --rojo-brasa: #c0392b;
+    --rojo-profundo: #8e2a1f;
+    --verde-guindilla: #8aa446;
+    --texto: #f4e8cf;
+    --texto-tenue: rgba(244, 232, 207, 0.72);
+    --borde: rgba(244, 232, 207, 0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--negro);
+    color: var(--texto);
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--mostaza); color: var(--negro); }
+
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--negro); }
+  ::-webkit-scrollbar-thumb { background: var(--carbon); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--tostado); }
+
+  h1, h2, h3, h4 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .serif { font-family: 'Playfair Display', serif; font-style: italic; text-transform: none; letter-spacing: 0; font-weight: 500; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--mostaza);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+  .section-tag::before { content: "—  "; color: var(--tostado); }
+
+  section { padding: 7rem 2rem; position: relative; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* ============ NAV ============ */
+  nav {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 1.4rem 3rem;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .4s ease;
+    background: transparent;
+  }
+  nav.scrolled {
+    background: rgba(17, 11, 7, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 0.9rem 3rem;
+    box-shadow: 0 2px 30px rgba(0,0,0,.45);
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    color: var(--crema);
+    font-family: 'Anton', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+    transition: transform .4s ease;
+    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.35));
+  }
+  nav.scrolled .logo img { height: 44px; }
+  .logo:hover img { transform: scale(1.05); }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text small {
+    color: var(--mostaza);
+    font-size: 0.58rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    font-weight: 500;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--crema);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    transition: color .3s;
+  }
+  .nav-links a:hover { color: var(--mostaza); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; left: 0;
+    width: 0; height: 1px;
+    background: var(--mostaza);
+    transition: width .3s;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .burger span { width: 26px; height: 2px; background: var(--crema); transition: .3s; }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--negro);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(180deg, rgba(17,11,7,0.55) 0%, rgba(17,11,7,0.35) 40%, rgba(17,11,7,0.92) 100%),
+      url('assets/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    transition: transform 12s ease-out;
+  }
+  .hero.loaded .hero-bg { transform: scale(1); }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 80%, rgba(192, 57, 43, 0.18), transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(225, 166, 74, 0.12), transparent 60%);
+    pointer-events: none;
+  }
+
+  .smoke-stack {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .smoke-puff {
+    position: absolute;
+    bottom: 18%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 60%,
+      rgba(255, 248, 230, 0.42) 0%,
+      rgba(244, 232, 207, 0.25) 30%,
+      rgba(244, 232, 207, 0.08) 55%,
+      transparent 75%);
+    filter: blur(22px);
+    opacity: 0;
+    animation: smokeRise 9s ease-in-out infinite;
+    will-change: transform, opacity;
+    mix-blend-mode: screen;
+  }
+  .smoke-puff:nth-child(1) { left: 22%; animation-delay: 0s;   animation-duration: 8s;  width: 240px; height: 240px; }
+  .smoke-puff:nth-child(2) { left: 38%; animation-delay: 1.4s; animation-duration: 10s; width: 200px; height: 200px; }
+  .smoke-puff:nth-child(3) { left: 50%; animation-delay: 0.6s; animation-duration: 9s;  width: 280px; height: 280px; }
+  .smoke-puff:nth-child(4) { left: 62%; animation-delay: 2.2s; animation-duration: 11s; width: 220px; height: 220px; }
+  .smoke-puff:nth-child(5) { left: 75%; animation-delay: 3.0s; animation-duration: 9.5s; width: 200px; height: 200px; }
+  .smoke-puff:nth-child(6) { left: 30%; animation-delay: 4.2s; animation-duration: 12s; width: 260px; height: 260px; }
+  .smoke-puff:nth-child(7) { left: 56%; animation-delay: 5.0s; animation-duration: 10.5s; width: 230px; height: 230px; }
+
+  @keyframes smokeRise {
+    0%   { transform: translate(-50%, 0) scale(0.6) rotate(0deg); opacity: 0; }
+    15%  { opacity: 0.85; }
+    50%  { opacity: 0.7; }
+    100% { transform: translate(-30%, -85vh) scale(2.4) rotate(25deg); opacity: 0; }
+  }
+
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 0 1.5rem;
+    max-width: 1000px;
+  }
+  .hero-eyebrow {
+    font-size: 0.85rem;
+    letter-spacing: 6px;
+    color: var(--mostaza);
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: fadeUp 1s 0.3s forwards;
+    font-weight: 600;
+  }
+  .hero-eyebrow::before,
+  .hero-eyebrow::after { content: "—"; margin: 0 0.8rem; opacity: 0.5; }
+
+  .hero h1 {
+    font-size: clamp(3rem, 9vw, 8rem);
+    color: var(--crema);
+    margin-bottom: 1.4rem;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    opacity: 0;
+    animation: fadeUp 1.2s 0.6s forwards;
+  }
+  .hero h1 .accent {
+    display: inline-block;
+    color: var(--mostaza);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    text-transform: none;
+    font-weight: 500;
+    letter-spacing: -1px;
+    transform: translateY(-8px);
+  }
+  .hero p.tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--crema-suave);
+    max-width: 620px;
+    margin: 0 auto 2.4rem;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.9s forwards;
+    line-height: 1.5;
+  }
+
+  .hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1.2s 1.2s forwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.05rem 2.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .35s cubic-bezier(.2,.7,.3,1);
+    border: none;
+  }
+  .btn-primary {
+    background: var(--rojo-brasa);
+    color: var(--crema);
+    box-shadow: 0 8px 30px rgba(192, 57, 43, 0.35);
+  }
+  .btn-primary:hover {
+    background: var(--rojo-profundo);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(192, 57, 43, 0.5);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--crema);
+    border: 1px solid var(--borde);
+  }
+  .btn-ghost:hover {
+    background: rgba(244, 232, 207, 0.08);
+    border-color: var(--mostaza);
+    color: var(--mostaza);
+  }
+
+  .status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.55rem 1.3rem;
+    background: rgba(17, 11, 7, 0.6);
+    border: 1px solid var(--borde);
+    border-radius: 50px;
+    margin: 2.4rem auto 0;
+    font-size: 0.78rem;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    color: var(--crema);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    animation: fadeUp 1.2s 1.5s forwards;
+    text-transform: uppercase;
+  }
+  .status-dot {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: #888;
+    position: relative;
+  }
+  .status-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.5;
+    animation: pulseStatus 2s ease-out infinite;
+  }
+  .status-open .status-dot { background: #4ade80; box-shadow: 0 0 12px rgba(74,222,128,.6); }
+  .status-closed .status-dot { background: #f87171; box-shadow: 0 0 12px rgba(248,113,113,.5); }
+  @keyframes pulseStatus {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* ============ SOBRE NOSOTROS ============ */
+  .sobre {
+    background: var(--negro);
+    position: relative;
+  }
+  .sobre::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 30%, rgba(192, 57, 43, 0.08), transparent 50%),
+      radial-gradient(circle at 85% 70%, rgba(225, 166, 74, 0.06), transparent 50%);
+    pointer-events: none;
+  }
+  .sobre-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .sobre h2 {
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    margin-bottom: 1.8rem;
+    color: var(--crema);
+  }
+  .sobre h2 .serif { color: var(--mostaza); display: block; font-size: 0.7em; margin-top: 0.4rem; }
+  .sobre p {
+    color: var(--texto-tenue);
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+  }
+  .sobre p strong { color: var(--crema); font-weight: 600; }
+
+  .sobre-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 6px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(17,11,7,0.15) 0%, rgba(17,11,7,0.75) 100%),
+      url('assets/sobre.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+  .sobre-visual::before {
+    content: '';
+    position: absolute;
+    inset: 1.2rem;
+    border: 1px solid rgba(244, 232, 207, 0.25);
+    pointer-events: none;
+  }
+  .sobre-visual-badge {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    color: var(--crema);
+    z-index: 2;
+  }
+  .sobre-visual-badge .small {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mostaza);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .sobre-visual-badge .big {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--borde);
+  }
+  .stat .num {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    color: var(--mostaza);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat .label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-tenue);
+  }
+
+  /* ============ CARTA ============ */
+  .carta {
+    background: linear-gradient(180deg, var(--negro) 0%, var(--negro-suave) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .carta-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .carta-header h2 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    color: var(--crema);
+    margin-bottom: 1rem;
+  }
+  .carta-header h2 .accent {
+    color: var(--mostaza);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    text-transform: none;
+    font-weight: 500;
+    display: inline-block;
+  }
+  .carta-header p {
+    color: var(--texto-tenue);
+    max-width: 580px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+  }
+
+  .almuerzo-banner {
+    background: linear-gradient(110deg, var(--rojo-profundo) 0%, var(--rojo-brasa) 100%);
+    border-radius: 6px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 18px 50px rgba(192, 57, 43, 0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .almuerzo-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at top right, rgba(225,166,74,0.25), transparent 60%);
+    pointer-events: none;
+  }
+  .ab-inner {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+  }
+  .ab-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 2.4rem;
+    border-right: 1px solid rgba(244,232,207,0.25);
+  }
+  .ab-time strong {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    color: var(--crema);
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  .ab-time span {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--crema-suave);
+    margin-top: 0.4rem;
+    opacity: 0.85;
+  }
+  .ab-text { flex: 1; min-width: 240px; }
+  .ab-text h4 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.4rem;
+    color: var(--crema);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+  }
+  .ab-text p { color: rgba(244,232,207,0.9); font-size: 0.95rem; line-height: 1.5; }
+
+  @media (max-width: 700px) {
+    .ab-time { border-right: none; border-bottom: 1px solid rgba(244,232,207,0.25); padding-right: 0; padding-bottom: 1rem; }
+  }
+
+  .carta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.6rem;
+  }
+  .card {
+    background: var(--carbon);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    padding: 2.4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all .45s cubic-bezier(.2,.7,.3,1);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--rojo-brasa), var(--mostaza));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s ease;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    border-color: var(--mostaza);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+  .card:hover::before { transform: scaleX(1); }
+
+  .card-icon {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--mostaza);
+    margin-bottom: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .card-icon::after {
+    content: '';
+    display: inline-block;
+    width: 36px;
+    height: 1px;
+    background: var(--mostaza);
+    opacity: 0.6;
+  }
+  .card h3 {
+    font-size: 1.6rem;
+    color: var(--crema);
+    margin-bottom: 0.6rem;
+  }
+  .card .price {
+    display: inline-block;
+    color: var(--mostaza);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .card .price small {
+    font-size: 0.7rem;
+    color: var(--texto-tenue);
+    letter-spacing: 2px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left: 0.4rem;
+  }
+  .card p { color: var(--texto-tenue); font-size: 0.95rem; }
+
+  /* ============ EL BOCATA GIGANTE ============ */
+  .gigante {
+    background: var(--negro-suave);
+    position: relative;
+    overflow: hidden;
+  }
+  .gigante::before {
+    content: 'XXL';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Anton', sans-serif;
+    font-size: 40vw;
+    color: rgba(192, 57, 43, 0.04);
+    letter-spacing: -2vw;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .gigante-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .gigante h2 {
+    font-size: clamp(3rem, 9vw, 7.5rem);
+    color: var(--crema);
+    margin-bottom: 1.5rem;
+    line-height: 0.95;
+  }
+  .gigante h2 .stripe {
+    display: inline-block;
+    background: var(--rojo-brasa);
+    color: var(--crema);
+    padding: 0 0.3em;
+    transform: rotate(-2deg);
+    margin: 0 0.1em;
+  }
+  .gigante h2 .serif {
+    display: block;
+    color: var(--mostaza);
+    font-size: 0.5em;
+    margin-top: 0.5rem;
+  }
+  .gigante p.lead {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--crema-suave);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    margin-bottom: 3rem;
+    line-height: 1.55;
+  }
+  .gigante-numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+  }
+  .gigante-numbers .num {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: var(--mostaza);
+    line-height: 1;
+  }
+  .gigante-numbers .label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-tenue);
+    margin-top: 0.6rem;
+  }
+
+  /* ============ GALERÍA ============ */
+  .galeria {
+    background: var(--negro);
+    position: relative;
+    overflow: hidden;
+  }
+  .galeria-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .galeria-header h2 {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    color: var(--crema);
+    margin-bottom: 1rem;
+  }
+  .galeria-header h2 .accent {
+    color: var(--mostaza);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    text-transform: none;
+    font-weight: 500;
+  }
+  .galeria-header p {
+    color: var(--texto-tenue);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .galeria-grid {
+    column-count: 4;
+    column-gap: 0.9rem;
+  }
+  .galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--carbon);
+    cursor: pointer;
+    margin: 0 0 0.9rem;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    display: block;
+  }
+  .galeria-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform .9s cubic-bezier(.2,.7,.3,1), filter .5s ease;
+    filter: brightness(0.88) saturate(1.05);
+  }
+  .galeria-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1) saturate(1.15);
+  }
+  .galeria-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(17,11,7,0.65) 100%);
+    opacity: 0;
+    transition: opacity .4s ease;
+    pointer-events: none;
+  }
+  .galeria-item:hover::after { opacity: 1; }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(8,5,3,0.96);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: zoom-out;
+  }
+  .lightbox.open {
+    display: flex;
+    animation: fadeIn .35s ease;
+  }
+  .lightbox img {
+    max-width: 92%;
+    max-height: 92%;
+    border-radius: 4px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: var(--crema);
+    font-size: 1.6rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--borde);
+    background: rgba(17,11,7,0.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============ HORARIO + UBICACIÓN ============ */
+  .horario {
+    background: var(--negro);
+  }
+  .horario-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: stretch;
+  }
+  .horario-block, .ubic-block {
+    background: var(--carbon);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    padding: 3rem 2.6rem;
+    position: relative;
+  }
+  .horario-block h3, .ubic-block h3 {
+    font-size: 1.8rem;
+    color: var(--crema);
+    margin-bottom: 2rem;
+  }
+  .horario-list {
+    list-style: none;
+  }
+  .horario-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.95rem 0;
+    border-bottom: 1px dashed var(--borde);
+    font-size: 0.95rem;
+  }
+  .horario-list li:last-child { border-bottom: none; }
+  .horario-list .day {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.78rem;
+    color: var(--texto-tenue);
+    font-weight: 500;
+  }
+  .horario-list .hours {
+    color: var(--crema);
+    font-weight: 500;
+  }
+  .horario-list .today {
+    color: var(--mostaza);
+    font-weight: 700;
+  }
+  .horario-list .today .day { color: var(--mostaza); }
+
+  .ubic-block iframe, .ubic-block .map-fallback {
+    width: 100%;
+    height: 280px;
+    border: 0;
+    border-radius: 4px;
+    filter: grayscale(40%) brightness(0.85);
+    margin-bottom: 1.5rem;
+  }
+  .ubic-block .addr {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--crema);
+    margin-bottom: 0.6rem;
+  }
+  .ubic-block .addr-detail {
+    font-size: 0.9rem;
+    color: var(--texto-tenue);
+    margin-bottom: 1.5rem;
+  }
+  .ubic-block .map-link {
+    color: var(--mostaza);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1px solid var(--mostaza);
+    padding-bottom: 2px;
+    transition: color .3s;
+  }
+  .ubic-block .map-link:hover { color: var(--crema); border-color: var(--crema); }
+
+  /* ============ CONTACTO ============ */
+  .contacto {
+    background: linear-gradient(180deg, var(--negro) 0%, var(--negro-suave) 100%);
+    text-align: center;
+  }
+  .contacto h2 {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    color: var(--crema);
+    margin-bottom: 1rem;
+  }
+  .contacto h2 .accent {
+    color: var(--mostaza);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    text-transform: none;
+  }
+  .contacto p.intro {
+    color: var(--texto-tenue);
+    max-width: 580px;
+    margin: 0 auto 3rem;
+    font-size: 1.05rem;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+  }
+  .contact-card {
+    background: var(--carbon);
+    border: 1px solid var(--borde);
+    padding: 2rem 1.5rem;
+    border-radius: 6px;
+    transition: all .35s ease;
+  }
+  .contact-card:hover {
+    border-color: var(--mostaza);
+    transform: translateY(-4px);
+  }
+  .contact-card .ico {
+    color: var(--mostaza);
+    margin: 0 auto 1rem;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-card .ico svg { width: 26px; height: 26px; }
+  .contact-card .lbl {
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--texto-tenue);
+    margin-bottom: 0.5rem;
+  }
+  .contact-card .val {
+    color: var(--crema);
+    font-size: 1rem;
+    word-break: break-word;
+  }
+  .contact-card a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .3s;
+  }
+  .contact-card a:hover { color: var(--mostaza); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--negro);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--borde);
+  }
+  footer .logo { margin-bottom: 1.5rem; display: inline-block; }
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .footer-social a {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--borde);
+    color: var(--crema);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all .35s ease;
+  }
+  .footer-social a:hover {
+    background: var(--mostaza);
+    color: var(--negro);
+    border-color: var(--mostaza);
+    transform: translateY(-3px);
+  }
+  .footer-social svg { width: 18px; height: 18px; }
+  footer p.copy {
+    color: var(--texto-tenue);
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+  footer p.tiny {
+    color: rgba(244,232,207,0.4);
+    font-size: 0.7rem;
+    margin-top: 0.6rem;
+  }
+
+  /* ============ REVEAL ANIMATIONS ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.3,1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.3,1);
+  }
+  .reveal-stagger.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+  .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
+  .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.25s; }
+  .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.35s; }
+  .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.45s; }
+  .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.55s; }
+  .reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.65s; }
+  .reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.75s; }
+  .reveal-stagger.visible > *:nth-child(9) { transition-delay: 0.85s; }
+  .reveal-stagger.visible > *:nth-child(n+10) { transition-delay: 0.95s; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.4rem; }
+    nav.scrolled { padding: 0.8rem 1.4rem; }
+    .nav-links { display: none; }
+    .burger { display: flex; }
+    section { padding: 5rem 1.4rem; }
+    .sobre-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .horario-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .stats { gap: 1rem; }
+    .stat .num { font-size: 2rem; }
+    .gigante-numbers { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 0; }
+    .sobre-visual { max-width: 420px; margin: 0 auto; }
+    .hero-cta-row { flex-direction: column; gap: 0.8rem; }
+    .btn { width: 100%; justify-content: center; }
+    .galeria-grid { column-count: 2; }
+  }
+  @media (max-width: 1100px) and (min-width: 901px) {
+    .galeria-grid { column-count: 3; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="#hero" class="logo">
+    <img src="assets/logo.png" alt="La Bien Parida de Ruzafa" />
+    <span class="logo-text">La Bien Parida<small>Ruzafa · Valencia</small></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#hero">Inicio</a></li>
+    <li><a href="#carta">Carta</a></li>
+    <li><a href="#horario">Horario</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <div class="burger" id="burger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="smoke-stack" aria-hidden="true">
+    <div class="smoke-puff"></div>
+    <div class="smoke-puff"></div>
+    <div class="smoke-puff"></div>
+    <div class="smoke-puff"></div>
+    <div class="smoke-puff"></div>
+    <div class="smoke-puff"></div>
+    <div class="smoke-puff"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Carnes Maduradas · Bocadillos XXL · Menús de grupo</p>
+    <h1>
+      La Bien Parida<br/>
+      <span class="accent">de Ruzafa</span>
+    </h1>
+    <p class="tagline">
+      Especialidad en carnes maduradas, almuerzos XXL y menús de grupo con barra libre. Abierto todos los días en el corazón de Ruzafa.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#carta" class="btn btn-primary">Ver la carta</a>
+      <a href="https://wa.me/34663982620?text=Hola%2C%20quiero%20reservar%20mesa%20en%20La%20Bien%20Parida%20de%20Ruzafa" target="_blank" rel="noopener" class="btn btn-ghost" id="ctaReserva">Reservar por WhatsApp</a>
+    </div>
+    <div class="status-indicator status-closed" id="statusIndicator">
+      <span class="status-dot"></span>
+      <span id="statusText">Comprobando horario…</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARTA ============ -->
+<section class="carta" id="carta">
+  <div class="container">
+    <div class="carta-header reveal">
+      <span class="section-tag">La carta</span>
+      <h2>Lo que sale <span class="accent">de la plancha</span></h2>
+      <p>Una selección de los imprescindibles. La carta completa, en la pizarra y al gusto del día.</p>
+    </div>
+
+    <div class="almuerzo-banner reveal">
+      <div class="ab-inner">
+        <div class="ab-time">
+          <strong>09:00 – 12:00</strong>
+          <span>todos los días</span>
+        </div>
+        <div class="ab-text">
+          <h4>Almuerzos populares</h4>
+          <p>Sin reserva. Ven directo. Bocadillos XXL recién hechos y tablas para compartir con pan de masa madre.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carta-grid reveal-stagger">
+      <div class="card">
+        <div class="card-icon">01 · la especialidad</div>
+        <h3>Carnes maduradas</h3>
+        <span class="price">según pieza</span>
+        <p>Nuestra especialidad de la casa. Chuletones, entrecots y cortes seleccionados con maduración propia. A la plancha, al punto exacto, sin atajos.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">02 · el clásico</div>
+        <h3>Bocadillos XXL</h3>
+        <span class="price">11 € <small>con bebida</small></span>
+        <p>Recién hechos al momento con <strong>pan de masa madre</strong>. Secreto ibérico con miel y mostaza, lomo con queso, calamares, carne con guindillas… ve con hambre.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">03 · para compartir</div>
+        <h3>Tablas para compartir</h3>
+        <span class="price">desde 7,50 € <small>con bebida</small></span>
+        <p>Jamones, ibéricos, embutidos, patés, quesos, ahumados, recortes, picoteo… o combinado personalizado. Con pan de masa madre.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">04 · novedad</div>
+        <h3>Mariscada "La Perfecta"</h3>
+        <span class="price">según mercado</span>
+        <p>Nuestra nueva bandeja para compartir. Marisco fresco para mesa larga, bien servido y mejor acompañado. Reserva con antelación por WhatsApp.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">05 · de la casa</div>
+        <h3>Patatas Bien Paridas</h3>
+        <span class="price">12 €</span>
+        <p>Patatas de la casa con todo encima: huevos rotos, ibérico, salsas. La ración generosa que esperarías en una taberna de Ruzafa. Para compartir (o no).</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">06 · celebraciones</div>
+        <h3>Menús para celebrar</h3>
+        <span class="price">con barra libre</span>
+        <p><strong>Barra libre</strong> de cerveza, vino, refrescos y cava — más una <strong>copa incluida</strong> en todos los menús. Para cumples, despedidas, comidas de empresa o porque sí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section class="galeria" id="galeria">
+  <div class="container">
+    <div class="galeria-header reveal">
+      <span class="section-tag">Lo que se ve</span>
+      <h2>De la <span class="accent">plancha</span> a la mesa</h2>
+      <p>Bocadillos XXL, chuletones, tablas y patatas con todo encima. Sin filtros, así sale.</p>
+    </div>
+
+    <div class="galeria-grid reveal-stagger">
+      <div class="galeria-item">
+        <img src="assets/hero.jpg" alt="Bocadillo de carne con guindillas y mostaza" loading="lazy"/>
+      </div>
+      <div class="galeria-item">
+        <img src="assets/bocata-xxl.jpg" alt="Bocadillo XXL en tabla" loading="lazy"/>
+      </div>
+      <div class="galeria-item">
+        <img src="assets/carne.jpg" alt="Chuletón con patatas" loading="lazy"/>
+      </div>
+      <div class="galeria-item">
+        <img src="assets/embutidos.jpg" alt="Tabla de embutidos a la brasa con huevos" loading="lazy"/>
+      </div>
+      <div class="galeria-item">
+        <img src="assets/bocata-huevos.jpg" alt="Bocata XXL con huevos a la plancha" loading="lazy"/>
+      </div>
+      <div class="galeria-item">
+        <img src="assets/gigante.jpg" alt="Bocadillo gigante con cuchillo" loading="lazy"/>
+      </div>
+      <div class="galeria-item">
+        <img src="assets/tablas.jpg" alt="Tablas variadas con embutido, patatas y huevos rotos" loading="lazy"/>
+      </div>
+      <div class="galeria-item">
+        <img src="assets/raciones.jpg" alt="Raciones variadas: huevos rotos, pescado, chuletas" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">×</button>
+  <img id="lightboxImg" src="" alt=""/>
+</div>
+
+<!-- ============ HORARIO + UBICACIÓN ============ -->
+<section class="horario" id="horario">
+  <div class="container">
+    <div class="carta-header reveal" style="margin-bottom:4rem;">
+      <span class="section-tag">Cuándo y dónde</span>
+      <h2>Pásate cuando <span class="accent">te apetezca</span></h2>
+    </div>
+
+    <div class="horario-grid">
+      <div class="horario-block reveal">
+        <h3>Horario</h3>
+        <ul class="horario-list" id="horarioList">
+          <li data-day="1"><span class="day">Lunes</span><span class="hours">9:00 – 16:00</span></li>
+          <li data-day="2"><span class="day">Martes</span><span class="hours">9:00 – 16:00</span></li>
+          <li data-day="3"><span class="day">Miércoles</span><span class="hours">9:00 – 00:30</span></li>
+          <li data-day="4"><span class="day">Jueves</span><span class="hours">9:00 – 00:30</span></li>
+          <li data-day="5"><span class="day">Viernes</span><span class="hours">9:00 – 01:30</span></li>
+          <li data-day="6"><span class="day">Sábado</span><span class="hours">9:00 – 01:30</span></li>
+          <li data-day="0"><span class="day">Domingo</span><span class="hours">9:00 – 16:00</span></li>
+        </ul>
+      </div>
+
+      <div class="ubic-block reveal">
+        <h3>Ubicación</h3>
+        <iframe
+          src="https://www.google.com/maps?q=Carrer+de+Sueca+52,+46004+Val%C3%A8ncia&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+        <div class="addr">Carrer de Sueca, 52</div>
+        <div class="addr-detail">L'Eixample · Ruzafa · 46004 València</div>
+        <a class="map-link" href="https://www.google.com/maps/place/La+Bien+Parida+de+Ruzafa/@39.4600874,-0.374147,17z" target="_blank" rel="noopener">Cómo llegar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="contacto" id="contacto">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-tag">Pasarse, escribir, celebrar</span>
+      <h2>Ven a <span class="accent">comer.</span></h2>
+      <p class="intro">
+        Lo bueno se brinda, lo crudo se aplaude. Almuerzos sin reserva. Comidas, cenas y celebraciones por WhatsApp.
+      </p>
+    </div>
+
+    <div class="contact-grid reveal-stagger">
+      <div class="contact-card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="lbl">Dirección</div>
+        <div class="val">
+          <a href="https://www.google.com/maps/place/La+Bien+Parida+de+Ruzafa" target="_blank" rel="noopener">
+            C/ Sueca, 52<br/>46004 València
+          </a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+        </div>
+        <div class="lbl">WhatsApp</div>
+        <div class="val"><a href="https://wa.me/34663982620?text=Hola%2C%20quiero%20reservar%20en%20La%20Bien%20Parida%20de%20Ruzafa" target="_blank" rel="noopener">663 98 26 20</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <div class="lbl">Instagram</div>
+        <div class="val"><a href="https://www.instagram.com/labienparidaderuzafa" target="_blank" rel="noopener">@labienparidaderuzafa</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <a href="#hero" class="logo" style="flex-direction:column;gap:0.8rem;">
+    <img src="assets/logo.png" alt="La Bien Parida de Ruzafa" style="height:78px;" />
+  </a>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/labienparidaderuzafa" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 01-1.38-.9 3.72 3.72 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.94c-3.15 0-3.5.01-4.74.07-1.07.05-1.65.23-2.04.38-.51.2-.88.44-1.27.83-.39.39-.63.76-.83 1.27-.15.39-.33.97-.38 2.04C2.69 8.5 2.68 8.85 2.68 12s.01 3.5.07 4.74c.05 1.07.23 1.65.38 2.04.2.51.44.88.83 1.27.39.39.76.63 1.27.83.39.15.97.33 2.04.38 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.07-.05 1.65-.23 2.04-.38.51-.2.88-.44 1.27-.83.39-.39.63-.76.83-1.27.15-.39.33-.97.38-2.04.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.07-.23-1.65-.38-2.04a3.42 3.42 0 00-.83-1.27 3.42 3.42 0 00-1.27-.83c-.39-.15-.97-.33-2.04-.38C15.5 4.11 15.15 4.1 12 4.1zm0 3.3a4.6 4.6 0 110 9.2 4.6 4.6 0 010-9.2zm0 7.6a3 3 0 100-6 3 3 0 000 6zm5.85-7.78a1.08 1.08 0 11-2.16 0 1.08 1.08 0 012.16 0z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/labienparidaderuzafa" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+    </a>
+  </div>
+  <p class="copy">La Bien Parida de Ruzafa · Valencia</p>
+  <p class="tiny">© <span id="year"></span> La Bien Parida ® · Todos los derechos reservados</p>
+</footer>
+
+<script>
+  // ============ NAV scroll ============
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // ============ HERO loaded ============
+  document.querySelector('.hero').classList.add('loaded');
+
+  // ============ Year ============
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ============ Status (abierto/cerrado) ============
+  // Horario por día (0=Domingo): apertura y cierre (en horas decimales; 24.5 = 00:30 del día siguiente)
+  const schedule = {
+    0: { open: 9, close: 16 },     // Domingo
+    1: { open: 9, close: 16 },     // Lunes
+    2: { open: 9, close: 16 },     // Martes
+    3: { open: 9, close: 24.5 },   // Miércoles -> 00:30
+    4: { open: 9, close: 24.5 },   // Jueves -> 00:30
+    5: { open: 9, close: 25.5 },   // Viernes -> 01:30
+    6: { open: 9, close: 25.5 }    // Sábado -> 01:30
+  };
+
+  function updateStatus() {
+    const now = new Date();
+    const day = now.getDay();
+    const hours = now.getHours() + now.getMinutes() / 60;
+
+    // ¿Estamos dentro de la franja del día actual?
+    const today = schedule[day];
+    let isOpen = hours >= today.open && hours < today.close;
+
+    // ¿O es madrugada y aún estamos en la franja del día anterior (cierre > 24)?
+    if (!isOpen) {
+      const prevDay = (day + 6) % 7;
+      const prev = schedule[prevDay];
+      if (prev.close > 24 && hours + 24 < prev.close && hours < (prev.close - 24)) {
+        isOpen = true;
+      }
+    }
+
+    const ind = document.getElementById('statusIndicator');
+    const txt = document.getElementById('statusText');
+    if (isOpen) {
+      ind.classList.add('status-open');
+      ind.classList.remove('status-closed');
+      txt.textContent = 'Abierto ahora';
+    } else {
+      ind.classList.add('status-closed');
+      ind.classList.remove('status-open');
+      txt.textContent = 'Cerrado ahora';
+    }
+
+    // Marcar día actual en la lista
+    document.querySelectorAll('#horarioList li').forEach(li => {
+      if (parseInt(li.dataset.day, 10) === day) li.classList.add('today');
+    });
+  }
+  updateStatus();
+
+  // ============ Reveal on scroll ============
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObserver.observe(el));
+
+  // ============ Counter animations ============
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const decimals = (target % 1 !== 0) ? 2 : 0;
+    const duration = 1600;
+    const start = performance.now();
+
+    function step(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = target * eased;
+      el.textContent = prefix + value.toFixed(decimals) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = prefix + target.toFixed(decimals) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        counterObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+  // ============ Parallax hero ============
+  const heroBg = document.querySelector('.hero-bg');
+  let parallaxTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!parallaxTicking) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < window.innerHeight && heroBg) {
+          heroBg.style.transform = `scale(1.05) translateY(${y * 0.35}px)`;
+        }
+        parallaxTicking = false;
+      });
+      parallaxTicking = true;
+    }
+  }, { passive: true });
+
+  // ============ Lightbox galería ============
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  document.querySelectorAll('.galeria-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  lightboxClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  // ============ Burger menu (mobile) ============
+  const burger = document.getElementById('burger');
+  const navLinks = document.querySelector('.nav-links');
+  burger.addEventListener('click', () => {
+    if (navLinks.style.display === 'flex') {
+      navLinks.style.display = '';
+    } else {
+      navLinks.style.display = 'flex';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '100%';
+      navLinks.style.left = '0';
+      navLinks.style.right = '0';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.background = 'rgba(17,11,7,0.97)';
+      navLinks.style.padding = '1.5rem';
+      navLinks.style.gap = '1.2rem';
+    }
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth < 900) navLinks.style.display = '';
+    });
+  });
+</script>
+</body>
+</html>
